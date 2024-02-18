@@ -51,7 +51,7 @@ void setup() {
 }
 
 void loop_1s() {
-   /* main process */
+    /* main process */
     uint8 led4_value = (count_value & 0x01) != 0x00;
     uint8 led5_value = (count_value & 0x02) != 0x00;
     uint8 led6_value = (count_value & 0x04) != 0x00;
