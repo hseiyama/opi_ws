@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <wiringPi.h>
+#include <stdio.h>
 
 typedef unsigned char uint8;
 typedef unsigned short uint16;
