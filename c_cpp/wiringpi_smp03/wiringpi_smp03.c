@@ -1,5 +1,5 @@
-#include <wiringPi.h>
 #include <stdio.h>
+#include <wiringPi.h>
 
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -7,7 +7,7 @@ typedef unsigned short uint16;
 /* PIN_PWM */
 #define PIN_PWM2 22
 
-int main (void) {
+int main(void) {
     uint16 brightness;
     /* initialize */
     wiringPiSetup();

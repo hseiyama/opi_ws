@@ -1,5 +1,5 @@
-#include <wiringPi.h>
 #include <stdio.h>
+#include <wiringPi.h>
 
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -31,7 +31,7 @@ void set_pinOutput(int pin) {
     digitalWrite(pin, LOW);
 }
 
-void setup() {
+void setup(void) {
     /* initialize */
     wiringPiSetup();
     /* input setting */
@@ -50,7 +50,7 @@ void setup() {
     set_pinOutput(PIN_LED7);
 }
 
-void loop_1s() {
+void loop_1s(void) {
     /* main process */
     uint8 led4_value = (count_value & 0x01) != 0x00;
     uint8 led5_value = (count_value & 0x02) != 0x00;
@@ -64,7 +64,7 @@ void loop_1s() {
     count_value = count_value + 1;
 }
 
-void loop() {
+void loop(void) {
     /* input process */
     uint8 sw0_value = digitalRead(PIN_SW0);
     uint8 sw1_value = digitalRead(PIN_SW1);
@@ -82,7 +82,7 @@ void loop() {
     digitalWrite(PIN_LED3, led3_value);
 }
 
-int main (void) {
+int main(void) {
     uint16 loop_count = 0;
     /* setup process */
     setup();

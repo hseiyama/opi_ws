@@ -1,7 +1,7 @@
-#include <wiringPi.h>
 #include <stdio.h>
+#include <wiringPi.h>
 
-int main (void)
+int main(void)
 {
     unsigned char pin_value;
     wiringPiSetup();
