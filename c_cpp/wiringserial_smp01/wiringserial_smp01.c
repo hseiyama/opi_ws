@@ -4,9 +4,10 @@
 
 int main(void) {
     /* initialize */
-    int serial = serialOpen ("/dev/ttyS5", 115200);
+    // wiringPiSetup();
+    int serial = serialOpen("/dev/ttyS5", 115200);
     if(serial < 0) {
-        fprintf (stderr, "Unable to open serial device.\n");
+        fprintf(stderr, "Unable to open serial device.\n");
         return 1;
     }
 
