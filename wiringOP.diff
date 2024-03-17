@@ -1,0 +1,33 @@
+diff --git a/gpio/readall.c b/gpio/readall.c
+index 1ab4ac1..b7b6f37 100644
+--- a/gpio/readall.c
++++ b/gpio/readall.c
+@@ -637,7 +637,7 @@ static char * physNames_ZERO_2_W[64] =
+ 	"   SDA.2", "SCL.2   ",
+ 	"    PI00", "GND     ",
+ 	"    PI15", "PWM1    ",
+-	"    PI12", "GND     ",
++	"    PWM2", "GND     ",
+ 	"    PI02", "PC12    ",
+ 	"    PI16", "PI04    ",
+ 	"     GND", "PI03    ",
+diff --git a/wiringPi/wiringPiSPI.c b/wiringPi/wiringPiSPI.c
+index 01b3e55..0f9ff78 100644
+--- a/wiringPi/wiringPiSPI.c
++++ b/wiringPi/wiringPiSPI.c
+@@ -97,7 +97,7 @@ int wiringPiSPIDataRW (int channel, unsigned char *data, int len)
+  */
+ 
+ void getDevice(char* spidev, int channel, int port) {
+-    sprintf(spidev, "/dev/spidev%i.%i", channel, port);
++    sprintf(spidev, "/dev/spidev%i.%i", port, channel);
+ }
+ 
+ int wiringPiSPISetupMode (int channel, int port, int speed, int mode)
+@@ -141,5 +141,5 @@ int wiringPiSPISetupMode (int channel, int port, int speed, int mode)
+ 
+ int wiringPiSPISetup (int channel, int speed)
+ {
+-  return wiringPiSPISetupMode (channel, 0, speed, 0) ;
++  return wiringPiSPISetupMode (channel, 1, speed, 0) ;
+ }
